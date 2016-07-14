@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn"> Button THIS
+
+
+</button>
+<script>
+    /*
+    1 задание
+
+     Создайте кнопку button в вашем документе
+     и выведете в консоль при нажатии на кнопку
+     ссылку this и проверте являеться ли this той кнопкой на которую вы нажали!*/
+
+    btn=document.getElementById('btn')
+    btn.addEventListener('click', function () {
+       console.log(this);
+
+       if ($btn==this)
+       {console.log('OK')}
+           ;
+    })
+
+
+</script>
+
+</body>
+</html>

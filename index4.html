@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<style>
+    .wnd{
+        width:100%;
+        height: 100%;
+        z-index: 99;
+        border: 1px solid black;
+
+
+    }
+
+</style>
+<script>
+    /*4 задание
+
+     Когда вы вводите что нибудь через клавиатуру у документа возникает событие
+     onkeyup, onkeydown, onkeypress и объект event имеет такое свойство как keyCode
+
+     То есть:
+
+     document.addEventListener('keydown', function (event) {
+     console.log(event.keyCode); // выдас   т код той клавиши котоую вы будете нажимать
+     });
+
+     Сделайте модальное окно которое будет появляться при нажатии
+     на кнопку которую вы создадите в документе, и сделайте так
+     чтобы при нажатии на ESC это окно закрывалось*/
+
+    var wnd=document.createElement('div');
+    document.addEventListener('keydown',  function (event) {
+
+                if (event.key=='w')
+                {
+                    document.body.appendChild(wnd);
+                }
+
+                if (event.which==27)
+                {
+                    document.getElementsByTagName('div')[0].style.display='none';
+                }
+//                    alert('Esc key pressed.');
+
+            }
+    );
+
+
+
+
+
+    wnd.className='wnd';
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="inp">
+
+<style>
+    input {
+        border: 2px solid black;
+        background-color:azure;
+        transition-property: background-color,border-color;
+        transition-duration: 1s;
+        transition-timing-function: linear;
+        border-radius: 2px;
+
+    }
+
+    input:hover{
+        background-color:aquamarine;
+        border-color:gold;
+        border-radius: 6px;
+}
+
+</style>
+
+<script>
+    /*2 задание
+
+     Создайте input[type=text] элемент. 
+     При фокусе на элемент после него будет добваляться новый div, 
+     при вводе в него текста тот же текст будет писаться в div внизу, 
+     после blur с input div будет удаляться*/
+
+
+    var inp = document.getElementById('inp');
+    console.log(inp.value)
+    inp.addEventListener('focus',addDiv);
+    inp.addEventListener('input',addTxt);
+    inp.addEventListener('blur',Blr);
+    inp.removeEventListener('click', addDiv);
+    inp.removeEventListener('click', addTxt);
+    inp.removeEventListener('click', Blr);
+
+    ///функция добавления элемента див
+    function addDiv() {
+        var div = document.createElement('div');
+        document.body.appendChild(div);
+            }
+    ///функция добавления текста в див
+    function  addTxt() {
+        var txt=inp.value;
+        document.getElementsByTagName('div')[0].innerHTML=txt;
+
+    }
+    //blur
+    function Blr () {
+        var div = document.getElementsByTagName('div');
+        l=(document.body.children.length-1);
+        for (i=0;i<l;i++)
+            {
+                div[i].remove()
+            }
+
+    }
+
+
+    
+</script>
+</body>
+</html>
